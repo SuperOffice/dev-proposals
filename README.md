@@ -242,11 +242,11 @@ Get - `/api/v1/CustomObject/42/fields`
 
 ```json
 {
-  "odata.metadata": "<https://www.example.com/api/v1/archive$metadata>",
+  "odata.metadata": "https://www.example.com/api/v1/archive$metadata",
   "odata.nextLink": "repellendus",
   "value": [
     {
-      "PrimaryKey": 1,
+      "PrimaryKey": [I:1],
       "EntityName": "x_equipment_id",
       "Type": "int",
       "DisplayName": "Something",
@@ -256,7 +256,7 @@ Get - `/api/v1/CustomObject/42/fields`
       "Rank": [I:1]
     },
     {
-      "PrimaryKey": 2,
+      "PrimaryKey": [I:2],
       "EntityName": "x_equipment_type",
       "FieldType": "string",
       "DisplayName": "Something",
@@ -305,7 +305,7 @@ Add an array of field definitions for a CustomObjectEntity.
 ```json
 [
   {
-    "Id": 1,
+    "Id": [I:1],
     "Name": "x_equipment_id",
     "Type": "int",
     "DisplayName": "Something",
@@ -315,7 +315,7 @@ Add an array of field definitions for a CustomObjectEntity.
     "Rank": [I:1]
   },
   {
-    "Id": 2,
+    "Id": [I:2],
     "Name": "x_equipment_type",
     "FieldType": "string",
     "DisplayName": "Something",
@@ -338,7 +338,7 @@ Updates field definitions for a CustomObjectEntity. All omitted fields (with its
 ```json
 [
   {
-    "Id": "1"
+    "Id": 1,
     "Name": "x_equipment_id",
     "Type": "int",
     "DisplayName": "Something",
@@ -355,7 +355,7 @@ Updates field definitions for a CustomObjectEntity. All omitted fields (with its
 ```json
 [
   {
-    "Id": 1,
+    "Id": [I:1],
     "Name": "x_equipment_id",
     "Type": "int",
     "DisplayName": "Something",
@@ -386,7 +386,7 @@ Update a field definition on a CustomObjectEntity with changes, as described in 
 
 ```json
   {
-    "Id": 1,
+    "Id": [I:1],
     "Name": "x_equipment_id",
     "Type": "int",
     "DisplayName": "Something",
@@ -421,7 +421,7 @@ GET `../api/v1/CustomObject/42/data`
 
 ```json
 {
-  "odata.metadata": "<https://www.example.com/api/v1/archive$metadata>",
+  "odata.metadata": "https://www.example.com/api/v1/archive$metadata",
   "odata.nextLink": "repellendus",
   "value": [
     {
@@ -448,11 +448,11 @@ Add an array of data to a CustomObjectEntity.
 [
     {
         "x_foo": "This is row1 data",
-        "x_bar": [I:2]
+        "x_bar": 2
     },
         {
         "x_foo": "This is row2 data",
-        "x_bar": [I:3]
+        "x_bar": 3
     }
 ]
 ```
