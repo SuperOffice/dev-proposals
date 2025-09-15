@@ -28,7 +28,7 @@ Calls the Archive service using the "CustomObject" archive.
 `GET /api/v1/CustomObject/`
 
 ### Response
-
+```json
 {
   "odata.metadata": "<https://www.example.com/api/v1/archive$metadata>",
   "odata.nextLink": "soluta",
@@ -74,7 +74,7 @@ Calls the Archive service using the "CustomObject" archive.
     }
   ]
 }
-
+```
 ## POST - /api/v1/CustomObject/ - [note](#disclaimer)
 
 Creates a new CustomObjectEntity
