@@ -4,6 +4,8 @@ The CustomObject Agent will contain all agent-methods related to working with Cu
 
 We want to provide a REST API for working with CustomObjects as well, and this document outlines some options and suggestions for how it might look. Feedback is expected from those who want to use the API.
 
+Note: All responses can be expected to be encoded values [according to our documentation](https://docs.superoffice.com/en/api/netserver/archive-providers/encoded-values.html).
+
 ## Disclaimer
 
 Some endpoints are currently not supported, as it requires some changes to NetServer to be able to create tables and fields. The document will link to this heading for the relevant endpoints that have this restriction.
