@@ -1,7 +1,8 @@
 # Custom Objects
 
 The CustomObject Agent will contain all agent-methods related to working with Custom Objects.
-This document is meant as a description for how to work with Custom Objects through the REST API.
+
+We want to provide a REST API for working with CustomObjects as well, and this document outlines some options and suggestions for how it might look. Feedback is expected from those who want to use the API.
 
 ## Disclaimer
 
@@ -28,9 +29,10 @@ Calls the Archive service using the "CustomObject" archive.
 `GET /api/v1/CustomObject/`
 
 ### Response
+
 ```json
 {
-  "odata.metadata": "<https://www.example.com/api/v1/archive$metadata>",
+  "odata.metadata": "https://www.example.com/api/v1/archive$metadata",
   "odata.nextLink": "soluta",
   "value": [
     {
@@ -75,6 +77,7 @@ Calls the Archive service using the "CustomObject" archive.
   ]
 }
 ```
+
 ## POST - /api/v1/CustomObject/ - [note](#disclaimer)
 
 Creates a new CustomObjectEntity
@@ -117,6 +120,8 @@ Calls the CustomObject agent service SaveCustomObjectEntity.
 }
 ```
 
+Note: It has been decided, at least for now, to not permit sending in Data in this step.
+
 #### Response
 
 ```json
@@ -126,26 +131,28 @@ Calls the CustomObject agent service SaveCustomObjectEntity.
   "Title": "Equipment Registry",
   "DisplayField": "Equipment",
   "Description": "This table contains information about equipments",
-  "IconId": 1,
-  "Flags": 1,
+  "IconId": [I:1],
+  "Flags": [I:1],
   "Fields": [
     {
+      "Id": [I:1]
       "Name": "x_equipment_id",
       "Type": "int",
       "DisplayName": "Something",
       "Description": "This is a description",
-      "UseDefaultValue": 1,
+      "UseDefaultValue": [I:1],
       "DefaultValue": "This uses default value",
-      "Rank": 1
+      "Rank": [I:1]
     },
     {
+      "Id": [I:2]
       "Name": "x_equipment_type",
       "FieldType": "string",
       "DisplayName": "Something",
       "Description": "This is a description",
-      "UseDefaultValue": 0,
+      "UseDefaultValue": [I:0],
       "DefaultValue": "This uses default value",
-      "Rank": 2
+      "Rank": [I:2]
     }
   ]
 }
@@ -157,7 +164,7 @@ This option keeps CustomObject definition and data on the same controller. The C
 
 We could also skip `/data/` as part of the path, for working with data-objects, to simplify this URL.
 
-### GET - /api/v1/CustomObject/{definition_id}
+### GET - /api/v1/CustomObject/{entity_id}
 
 Gets a CustomObjectEntity object.
 
@@ -211,7 +218,7 @@ Calls the CustomObject agent service GetCustomObjectEntity.
 }
 ```
 
-### GET - /api/v1/CustomObject/{definition_id}/fields
+### GET - /api/v1/CustomObject/{entity_id}/fields
 
 OData list of field definitions for a specific CustomObjectEntity.
 
@@ -262,13 +269,14 @@ Get - `/api/v1/CustomObject/42/fields`
 }
 ```
 
-### POST - /api/v1/CustomObject/{definition_id}/fields - [note](#disclaimer)
+### POST - /api/v1/CustomObject/{entity_id}/fields - [note](#disclaimer)
 
-Add an array of field definitions to a CustomObjectEntity.
+Add an array of field definitions for a CustomObjectEntity.
 
 #### Request
 
 `POST ../api/v1/CustomObject/42/fields`
+
 ```json
 [
   {
@@ -291,7 +299,9 @@ Add an array of field definitions to a CustomObjectEntity.
   }
 ]
 ```
+
 #### Response
+
 ```json
 [
   {
@@ -316,13 +326,15 @@ Add an array of field definitions to a CustomObjectEntity.
   }
 ]
 ```
-### PUT - /api/v1/CustomObject/{definition_id}/fields - [note](#disclaimer)
+
+### PUT - /api/v1/CustomObject/{entity_id}/fields - [note](#disclaimer)
 
 Updates field definitions for a CustomObjectEntity. All omitted fields (with its data) will be removed from the database! Risky?
 
 #### Request
 
 `PUT /api/v1/CustomObject/42/fields`
+
 ```json
 [
   {
@@ -337,7 +349,9 @@ Updates field definitions for a CustomObjectEntity. All omitted fields (with its
   }
 ]
 ```
+
 #### Response
+
 ```json
 [
   {
@@ -352,7 +366,8 @@ Updates field definitions for a CustomObjectEntity. All omitted fields (with its
   }
 ]
 ```
-### PATCH - /api/v1/CustomObject/{definition_id}/fields/{field_id}
+
+### PATCH - /api/v1/CustomObject/{entity_id}/fields/{field_id}
 
 Update a field definition on a CustomObjectEntity with changes, as described in a JSON Patch or a JSON Merge Patch document.
 `Id`, `Name` and `Type` cannot be changed here, as they are set on creation.
@@ -368,6 +383,7 @@ Update a field definition on a CustomObjectEntity with changes, as described in 
 { "Description": "This is a new description" }
 
 #### Response
+
 ```json
   {
     "Id": 1,
@@ -380,7 +396,8 @@ Update a field definition on a CustomObjectEntity with changes, as described in 
     "Rank": [I:1]
   }
 ```
-### GET - /api/v1/CustomObject/{definition_id}/data
+
+### GET - /api/v1/CustomObject/{entity_id}/data
 
 OData list of data for a specific CustomObjectEntity.
 
@@ -401,6 +418,7 @@ Calls the Archive service using the "CustomObject" archive provider.
 GET `../api/v1/CustomObject/42/data`
 
 #### Response
+
 ```json
 {
   "odata.metadata": "<https://www.example.com/api/v1/archive$metadata>",
@@ -417,13 +435,15 @@ GET `../api/v1/CustomObject/42/data`
   ]
 }
 ```
-### POST - /api/v1/CustomObject/{definition_id}/data
+
+### POST - /api/v1/CustomObject/{entity_id}/data
 
 Add an array of data to a CustomObjectEntity.
 
 #### Request
 
 `POST ../api/v1/CustomObject/42/data`
+
 ```json
 [
     {
@@ -436,7 +456,9 @@ Add an array of data to a CustomObjectEntity.
     }
 ]
 ```
+
 #### Response
+
 ```json
 [
     {
@@ -451,7 +473,8 @@ Add an array of data to a CustomObjectEntity.
     }
 ]
 ```
-### GET - /api/v1/CustomObject/{definition_id}/data/{object_id}
+
+### GET - /api/v1/CustomObject/{entity_id}/data/{data_id}
 
 Gets a CustomObjectEntity data object.
 
@@ -462,15 +485,17 @@ Calls the CustomObject agent service GetCustomObjectData.
 `GET ../api/v1/CustomObject/42/data/123`
 
 #### Response
+
 ```json
 {
     "x_foo": "This is row1 data",
     "x_bar": [I:2]
 }
 ```
-### PATCH - /api/v1/CustomObject/{definition_id}/data/{object_id}
 
-Update a field on a data-object on a CustomObjectEntity with changes, as described in a JSON Patch or a JSON Merge Patch document.
+### PATCH - /api/v1/CustomObject/{entity_id}/data/{data_id}
+
+Update a value on a data-object on a CustomObjectEntity with changes, as described in a JSON Patch or a JSON Merge Patch document.
 
 #### Request
 
@@ -483,16 +508,18 @@ Update a field on a data-object on a CustomObjectEntity with changes, as describ
 { "x_foo": "I want to update this" }
 
 #### Response
+
 ```json
 {
-    "id": [I:1]
+    "id": [I:1],
     "x_foo": "I want to update this",
     "x_bar": [I:2]
 }
 ```
+
 ## Option 2
 
-This option separates CustomObjectDefinitions and CustomObjectData on 2 different controllers. This means you have to use `CustomObjectDefinition` to handle table and fields, and only get data back from the `CustomObject`-endpoints.
+This option separates CustomObjectDefinitions and CustomObjectData on 2 different controllers. This means you have to use `CustomObjectDefinition` to handle table and fields, and only get data back from the `CustomObject`-endpoints. It makes it a little easier to understand what a CustomObject is (is it the definition itself or an object of a typeOf definition?).
 
 ### GET - /api/v1/CustomObjectDefinition/{definition_id}
 
