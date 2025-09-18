@@ -19,6 +19,27 @@ This repo is *not* for bug reports or product support. Please use [SuperOffice s
 
 ---
 
+## 🔄 Relationship Between Proposals, RFCs, and Specs
+
+- **Proposals** →  
+  Early-stage ideas, API suggestions, or improvements.  
+  - Lightweight, short documents.  
+  - Used to collect feedback before significant effort is spent.  
+
+- **RFCs (Requests for Comments)** →  
+  Larger, architectural or cross-cutting design efforts.  
+  - Broader in scope than a proposal.  
+  - Often involve multiple APIs, systems, or integrations.  
+  - Serve as the deep technical discussion space.  
+
+- **Specifications (Specs)** →  
+  The final, accepted design.  
+  - Reference-level documentation.  
+  - Includes request/response formats, data models, workflows, and security considerations.  
+  - Used by developers as the “source of truth” for implementation.
+ 
+---
+
 ## 📂 Repository Structure
 
 - **/README.md** → This file
