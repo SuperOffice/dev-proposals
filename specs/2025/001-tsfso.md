@@ -70,10 +70,10 @@ Mermaid diagram example:
 
 ```mermaid
 sequenceDiagram
-    SuperOffce->>transpiler: typescript
+    SuperOffice->>transpiler: typescript
     transpiler->>SuperOffice: javascript
     SuperOffice->>Node: javascript
-    Node-->>Client: 200 OK + payload
+    Node-->>SuperOffice: 200 OK + payload
 ```
 
 ---
