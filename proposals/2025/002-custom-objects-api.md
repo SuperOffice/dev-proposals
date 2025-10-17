@@ -56,40 +56,40 @@ Calls the Archive service using the "CustomObject" archive.
   "odata.nextLink": "soluta",
   "value": [
     {
-        "PrimaryKey": [I:42],
+        "PrimaryKey": "[I:42]",
         "EntityName": "y_equipment",
         "Title": "Equipment Registry",
         "DisplayField": "Equipment",
         "Description": "This table contains information about equipments",
-        "IconId": [I:1],
-        "Flags": [I:1],
+        "IconId": "[I:1]",
+        "Flags": "[I:1]",
         "Fields": [
             {
             "Name": "x_equipment_id",
             "Type": "int",
             "DisplayName": "Something",
             "Description": "This is a description",
-            "UseDefaultValue": [I:0],
+            "UseDefaultValue": "[I:0]",
             "DefaultValue": "This uses default value",
-            "Rank": [I:1]
+            "Rank": "[I:1]"
             },
             {
             "Name": "x_equipment_type",
             "FieldType": "string",
             "DisplayName": "Something",
             "Description": "This is a description",
-            "UseDefaultValue": [I:0],
+            "UseDefaultValue": "[I:0]",
             "DefaultValue": "This uses default value",
-            "Rank": [I:2]
+            "Rank": "[I:2]"
             }
         ],
         "Data": [
             {
-            "x_equipment_id": [I:1],
+            "x_equipment_id": "[I:1]",
             "x_equipment_type": "Hammer"
             },
             {
-            "x_equipment_id": [I:2],
+            "x_equipment_id": "[I:2]",
             "x_equipment_type": "Nail"
             }
         ]
@@ -151,28 +151,28 @@ Note: It has been decided, at least for now, to not permit sending in Data in th
   "Title": "Equipment Registry",
   "DisplayField": "Equipment",
   "Description": "This table contains information about equipments",
-  "IconId": [I:1],
-  "Flags": [I:1],
+  "IconId": "[I:1]",
+  "Flags": "[I:1]",
   "Fields": [
     {
-      "Id": [I:1]
+      "Id": "[I:1]",
       "Name": "x_equipment_id",
       "Type": "int",
       "DisplayName": "Something",
       "Description": "This is a description",
-      "UseDefaultValue": [I:1],
+      "UseDefaultValue": "[I:1]",
       "DefaultValue": "This uses default value",
-      "Rank": [I:1]
+      "Rank": "[I:1]"
     },
     {
-      "Id": [I:2]
+      "Id": "[I:2]",
       "Name": "x_equipment_type",
       "FieldType": "string",
       "DisplayName": "Something",
       "Description": "This is a description",
-      "UseDefaultValue": [I:0],
+      "UseDefaultValue": "[I:0]",
       "DefaultValue": "This uses default value",
-      "Rank": [I:2]
+      "Rank": "[I:2]"
     }
   ]
 }
@@ -198,40 +198,40 @@ Calls the CustomObject agent service GetCustomObjectEntity.
 
 ```json
 {
-  "Id": [I:42],
+  "Id": "[I:42]",
   "Name": "y_equipment",
   "Title": "Equipment Registry",
   "DisplayField": "Equipment",
   "Description": "This table contains information about equipments",
-  "IconId": [I:1],
-  "Flags": [I:1],
+  "IconId": "[I:1]",
+  "Flags": "[I:1]",
   "Fields": [
     {
       "Name": "x_equipment_id",
       "Type": "int",
       "DisplayName": "Something",
       "Description": "This is a description",
-      "UseDefaultValue": [I:0],
+      "UseDefaultValue": "[I:0]",
       "DefaultValue": "This uses default value",
-      "Rank": [I:1]
+      "Rank": "[I:1]"
     },
     {
       "Name": "x_equipment_type",
       "FieldType": "string",
       "DisplayName": "Something",
       "Description": "This is a description",
-      "UseDefaultValue": [I:0],
+      "UseDefaultValue": "[I:0]",
       "DefaultValue": "This uses default value",
-      "Rank": [I:2]
+      "Rank": "[I:2]"
     }
   ],
   "Data": [
     {
-        "x_equipment_id": [I:1],
+        "x_equipment_id": "[I:1]",
         "x_equipment_type": "Hammer"
     },
     {
-        "x_equipment_id": [I:2],
+        "x_equipment_id": "[I:2]",
         "x_equipment_type": "Nail"
     }
   ]
@@ -266,24 +266,24 @@ Get - `/api/v1/CustomObject/42/fields`
   "odata.nextLink": "repellendus",
   "value": [
     {
-      "PrimaryKey": [I:1],
+      "PrimaryKey": "[I:1]",
       "EntityName": "x_equipment_id",
       "Type": "int",
       "DisplayName": "Something",
       "Description": "This is a description",
-      "UseDefaultValue": [I:0],
+      "UseDefaultValue": "[I:0]",
       "DefaultValue": "This uses default value",
-      "Rank": [I:1]
+      "Rank": "[I:1]"
     },
     {
-      "PrimaryKey": [I:2],
+      "PrimaryKey": "[I:2]",
       "EntityName": "x_equipment_type",
       "FieldType": "string",
       "DisplayName": "Something",
       "Description": "This is a description",
-      "UseDefaultValue": [I:0],
+      "UseDefaultValue": "[I:0]",
       "DefaultValue": "This uses default value",
-      "Rank": [I:2]
+      "Rank": "[I:2]"
     }
   ]
 }
@@ -325,24 +325,24 @@ Add an array of field definitions for a CustomObjectEntity.
 ```json
 [
   {
-    "Id": [I:1],
+    "Id": "[I:1]",
     "Name": "x_equipment_id",
     "Type": "int",
     "DisplayName": "Something",
     "Description": "This is a description",
-    "UseDefaultValue": [I:1],
+    "UseDefaultValue": "[I:1]",
     "DefaultValue": "This uses default value",
-    "Rank": [I:1]
+    "Rank": "[I:1]"
   },
   {
-    "Id": [I:2],
+    "Id": "[I:2]",
     "Name": "x_equipment_type",
     "FieldType": "string",
     "DisplayName": "Something",
     "Description": "This is a description",
-    "UseDefaultValue": [I:0],
+    "UseDefaultValue": "[I:0]",
     "DefaultValue": "This uses default value",
-    "Rank": [I:2]
+    "Rank": "[I:2]"
   }
 ]
 ```
@@ -375,14 +375,14 @@ Updates field definitions for a CustomObjectEntity. All omitted fields (with its
 ```json
 [
   {
-    "Id": [I:1],
+    "Id": "[I:1]",
     "Name": "x_equipment_id",
     "Type": "int",
     "DisplayName": "Something",
     "Description": "This is a NEW description",
-    "UseDefaultValue": [I:1],
+    "UseDefaultValue": "[I:1]",
     "DefaultValue": "This uses default value",
-    "Rank": [I:1]
+    "Rank": "[I:1]"
   }
 ]
 ```
@@ -406,14 +406,14 @@ Update a field definition on a CustomObjectEntity with changes, as described in 
 
 ```json
   {
-    "Id": [I:1],
+    "Id": "[I:1]",
     "Name": "x_equipment_id",
     "Type": "int",
     "DisplayName": "Something",
     "Description": "This is a new description",
-    "UseDefaultValue": [I:1],
+    "UseDefaultValue": "[I:1]",
     "DefaultValue": "This uses default value",
-    "Rank": [I:1]
+    "Rank": "[I:1]"
   }
 ```
 
@@ -446,11 +446,11 @@ GET `../api/v1/CustomObject/42/data`
   "value": [
     {
         "x_foo": "This is row1 data",
-        "x_bar": [I:2]
+        "x_bar": "[I:2]"
     },
         {
         "x_foo": "This is row2 data",
-        "x_bar": [I:3]
+        "x_bar": "[I:3]"
     }
   ]
 }
@@ -482,14 +482,14 @@ Add an array of data to a CustomObjectEntity.
 ```json
 [
     {
-        "id": [I:1]
+        "id": "[I:1]",
         "x_foo": "This is row1 data",
-        "x_bar": [I:2]
+        "x_bar": "[I:2]"
     },
     {
-        "id": [I:2]
+        "id": "[I:2]",
         "x_foo": "This is row2 data",
-        "x_bar": [I:3]
+        "x_bar": "[I:3]"
     }
 ]
 ```
@@ -509,7 +509,7 @@ Calls the CustomObject agent service GetCustomObjectData.
 ```json
 {
     "x_foo": "This is row1 data",
-    "x_bar": [I:2]
+    "x_bar": "[I:2]"
 }
 ```
 
@@ -531,9 +531,9 @@ Update a value on a data-object on a CustomObjectEntity with changes, as describ
 
 ```json
 {
-    "id": [I:1],
+    "id": "[I:1]",
     "x_foo": "I want to update this",
-    "x_bar": [I:2]
+    "x_bar": "[I:2]"
 }
 ```
 
